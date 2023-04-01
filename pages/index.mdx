@@ -1,5 +1,137 @@
-import { ExternalLinks } from "../components/externalLinks";
-import { ProgrammingLanguages } from "../components/programmingLanguages";
+import { Table, Container, Flex, Button, Progress } from "@mantine/core";
+import {
+  IconBrandGithubFilled,
+  IconBrandLinkedin,
+  IconMail,
+  IconArticle,
+  IconBrandPython,
+  IconBrandCss3,
+  IconBrandHtml5,
+  IconBrandGolang,
+  IconBrandTypescript,
+  IconBrandJavascript,
+  IconBrandCpp,
+} from "@tabler/icons-react";
+
+export function ExternalLinks() {
+  return (
+    <Container>
+      <Flex
+        direction={{ base: "column", sm: "row" }}
+        gap={{ base: "sm", sm: "lg" }}
+        justify={{ sm: "center" }}
+      >
+        <Button
+          compact
+          radius="md"
+          variant="subtle"
+          component="a"
+          color="indigo"
+          href="https://www.linkedin.com/in/xpav/"
+          leftIcon={<IconBrandLinkedin />}
+        >
+          LinkedIn
+        </Button>
+        <Button
+          compact
+          radius="md"
+          variant="subtle"
+          component="a"
+          color="indigo"
+          href="https://www.funailog.com/"
+          leftIcon={<IconArticle />}
+        >
+          funailog.com
+        </Button>
+        <Button
+          compact
+          radius="md"
+          variant="subtle"
+          component="a"
+          color="indigo"
+          href="mailto:pavegy+work@gmail.com"
+          leftIcon={<IconMail />}
+        >
+          pavegy+work@gmail.com
+        </Button>
+        <Button
+          compact
+          radius="md"
+          variant="subtle"
+          component="a"
+          color="indigo"
+          href="https://github.com/paveg"
+          leftIcon={<IconBrandGithubFilled />}
+        >
+          GitHub
+        </Button>
+      </Flex>
+    </Container>
+  );
+}
+
+export function ProgrammingLanguages() {
+  const items = [
+    { name: "Ruby", numberOfYearsExperience: 8, experienceLevel: "Advanced" },
+    {
+      name: "Golang",
+      logo: <IconBrandGolang />,
+      numberOfYearsExperience: 3,
+      experienceLevel: "Intermediate",
+    },
+    {
+      name: "HTML5",
+      logo: <IconBrandHtml5 />,
+      numberOfYearsExperience: 8,
+      experienceLevel: "Advanced",
+    },
+    {
+      name: "CSS3",
+      logo: <IconBrandCss3 />,
+      numberOfYearsExperience: 8,
+      experienceLevel: "Intermediate",
+    },
+    {
+      name: "TypeScript (JavaScript)",
+      logo: <IconBrandTypescript />,
+      numberOfYearsExperience: 7,
+      experienceLevel: "Advanced",
+    },
+    {
+      name: "Python",
+      logo: <IconBrandPython />,
+      numberOfYearsExperience: 2,
+      experienceLevel: "Beginner",
+    },
+    {
+      name: "C++",
+      logo: <IconBrandCpp />,
+      numberOfYearsExperience: 2,
+      experienceLevel: "Beginner",
+    },
+  ];
+  const rows = items.map((item) => (
+    <tr key={item.name}>
+      <td>{item.name}</td>
+      <td>{item.logo}</td>
+      <td>{item.numberOfYearsExperience}+ years</td>
+      <td>{item.experienceLevel}</td>
+    </tr>
+  ));
+  return (
+    <Table highlightOnHover horizontalSpacing="md" withBorder fontSize="sm">
+      <thead>
+        <tr>
+          <th>Languages</th>
+          <th>Logos</th>
+          <th>Number of years experience</th>
+          <th>Experience level</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </Table>
+  );
+}
 
 # Ryota Ikezawa
 

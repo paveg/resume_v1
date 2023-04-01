@@ -18,8 +18,4 @@ export default {
       name: "Nextra",
     },
   ],
-  i18n: [
-    { locale: "en", text: "English" },
-    { locale: "ja", text: "日本語" },
-  ],
 };
