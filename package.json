@@ -4,16 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm next",
+    "lint": "pnpm rome format components/ --write"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "@mantine/core": "^6.0.5",
+    "@mantine/hooks": "^6.0.5",
+    "@tabler/icons-react": "^2.13.0",
     "next": "^13.2.4",
     "nextra": "^2.3.0",
     "nextra-theme-blog": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "rome": "12.0.0"
   }
 }

@@ -1,5 +1,5 @@
 export default {
-  footer: <p>MIT 2023 © Nextra.</p>,
+  footer: <p>MIT 2023 © Ryota Ikezawa.</p>,
   head: ({ title, meta }) => (
     <>
       {meta.description && (
@@ -17,5 +17,9 @@ export default {
       url: "https://github.com/shuding/nextra",
       name: "Nextra",
     },
+  ],
+  i18n: [
+    { locale: "en", text: "English" },
+    { locale: "ja", text: "日本語" },
   ],
 };
