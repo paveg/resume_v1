@@ -1,4 +1,4 @@
-import { Table, Container, Flex, Button, Progress } from "@mantine/core";
+import { Table, Container, Flex, Button, Badge } from "@mantine/core";
 import {
   IconBrandGithubFilled,
   IconBrandLinkedin,
@@ -70,6 +70,23 @@ export function ExternalLinks() {
   );
 }
 
+export const ExperienceLevelBadge = ({ level }) => {
+  const color = (level) =>  {
+    switch (level) {
+    case 'Beginner':
+      return 'green';
+    case 'Intermediate':
+      return 'blue';
+    case 'Advanced':
+      return 'red';
+    default:
+      return 'gray';
+  };
+  }
+
+return <Badge radius='sm' variant='filled' color={color(level)}>{level}</Badge>
+};
+
 export function ProgrammingLanguages() {
   const items = [
     { name: "Ruby", numberOfYearsExperience: 8, experienceLevel: "Advanced" },
@@ -115,7 +132,9 @@ export function ProgrammingLanguages() {
       <td>{item.name}</td>
       <td>{item.logo}</td>
       <td>{item.numberOfYearsExperience}+ years</td>
-      <td>{item.experienceLevel}</td>
+      <td>
+        <ExperienceLevelBadge level={item.experienceLevel} />
+      </td>
     </tr>
   ));
   return (
